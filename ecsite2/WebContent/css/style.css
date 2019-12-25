@@ -1,0 +1,311 @@
+@CHARSET "UTF-8";
+
+body {
+	width:100%;
+	height:700px;
+	margin: 0;
+	padding:0;
+	font-size:12px;
+	font-family:Arial,メイリオ;
+	position:relative;
+	z-index:3;
+
+
+}
+
+/*----全体----*/
+
+#header {
+	width: 100%;
+	height:80px;
+	background-color:#CCFFFF;
+}
+
+h2 {
+	line-height: 80px;
+	margin:0;
+	passing:0;
+	font-size:20px;
+}
+
+
+#main {
+	text-align:center;
+	width:100%;
+	height:540px;
+}
+
+h3 {
+	padding-top:30px;
+}
+
+
+.wwFormTable {
+	margin:0 auto;
+}
+
+
+div {
+	text-align:center;
+}
+
+.button {
+	padding:5px 25px;
+	border-style:none;
+	background-color:transparent;
+	border:solid 3px #33FFFF;
+	margin-top:10px;
+}
+
+
+a {
+	font-size:15px;
+	color:black;
+}
+
+#error {
+	margin-top:20px;
+}
+
+form {
+	width:80%;
+	margin:0 auto;
+	padding-top:30px;
+}
+
+table {
+	width:50%;
+	margin:0 auto;
+
+}
+
+/*-----------HOME.jsp-----------*/
+
+
+#menu {
+	width:100%;
+	padding-top:220px;
+}
+
+#menu form {
+	display:inline-block;
+
+}
+
+.menu-button {
+	text-decoration:none;
+	font-size:18px;
+	color:black;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right:10px;
+	margin-left:10px;
+	position:relativ;
+}
+
+.menu-button:hover {
+	border-bottom:2px solid #FFFF33;
+	border-left:2px solid #CCFFFF;
+	transition: .6s ease 0s;
+}
+
+
+/*----------login.jsp----------*/
+
+#link {
+	padding-top:250px;
+}
+
+/*--------------itemList.jsp*/
+
+#itemList {
+	position:absoulte;
+	z-index:2;
+	width:100%;
+	height:500px;
+	margin:0 auto;
+	left:10px;
+
+}
+
+#list_css form {
+	top:10px;
+	left:10px;
+}
+
+#itemList ul {
+	max-width:20%;
+	display:inline-block;
+	text-align:center;
+	padding:20px 20px;
+	margin:10px 10px;
+}
+
+#itemList li {
+	list-style: none;
+	text-align:center;
+	padding-bottom:5px;
+}
+
+#itemList li p {
+	color:gray;
+	border:1px solid gray;
+	padding:50px 30px;
+
+}
+
+#CartAddAction {
+	display:none;
+	border:1px solid black;
+	position:absolute;
+	height:400px;
+	width:80%;
+	z-index:1;
+	top:20px;
+	left:20px;
+	padding-top:10px;
+	background-color:white;
+}
+
+#CartAddAction p {
+	float:left;
+	width:40%;
+	height:300px;
+	border:1px solid black;
+	margin-left:10%;
+	margin-top:50px;
+	line-height:300px;
+}
+
+#CartAddAction ul {
+	float:right;
+	padding:10px;
+	margin-top:40px;
+	width:30%;
+
+}
+
+#CartAddAction li {
+	list-style:none;
+	padding-bottom:10px;
+}
+
+
+#CartAddAction #close {
+	border-radius:50%;
+	background-color:#33FFFF;
+	border:none;
+	font-size:25px;
+	color:white;
+	float:right;
+	margin:10px 20px;
+	margin-top:0;
+	padding:1px 7px;
+	padding-bottom:0;
+}
+
+#CartAddAction #close:hover {
+	background-color:red;
+	transition: .5s ease 0s;
+}
+
+#background {
+	display:none;
+	position:absoulte;
+	background-color:black;
+	opacity:0.5;
+	width:100%;
+	height:700px;
+	z-index:2;
+	top:0px;
+	left:0px;
+}
+
+/*-------------registAdress.jsp--------------*/
+
+ul {
+	padding:0;
+	padding-bottom:30px;
+	margin:0 auto;
+	width:70%;
+}
+
+ul li {
+	list-style:none;
+	padding-top:10px;
+	width:100%;
+
+}
+
+.input {
+	margin-left:0;
+	padding-left:0px;
+	width:55%;
+}
+
+.label {
+	font-size:17px;
+	width:40%;
+	padding-left:2px;
+	padding-right:0;
+	padding-bottom:2px;
+	float:left;
+	text-align:left;
+	border-left:2px solid #FFCCCC;
+	border-bottom:2px dotted #FFCCCC;
+
+
+}
+
+/*-------------registAdressConfirm.jsp--------------*/
+
+#RegistAdressComplete ul{
+	margin:0 auto;
+}
+
+#RegistAdressComplete p {
+	font-size:17px;
+	padding-left:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#RegistAdressComplete span {
+	font-size:17px;
+	width:60%;
+	float:right;
+
+}
+
+/*----------------userCreateConfirm.jsp-------------*/
+
+#UserCreateComplete ul{
+	margin:0 auto;
+}
+
+#UserCreateComplete p {
+	font-size:17px;
+	padding-left:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#UserCreateComplete span {
+	font-size:17px;
+	width:60%;
+	float:right;
+
+}
+
+#footer {
+	width:100%;
+	height:80px;
+	text-align:center;
+	background-color:#CCFFFF;
+	clear:both;
+	margin:0;
+	padding:0;
+	line-height:80px;
+}

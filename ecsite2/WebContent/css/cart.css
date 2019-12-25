@@ -1,0 +1,122 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: Arial;
+	height: 760px;
+	color: #222222;
+}
+
+#main {
+	height: 630px;
+	position: rerative;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	margin-top: 50px;
+}
+
+form {
+	width: 90%;
+	margin: 0 auto;
+
+}
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+ 	border-spacing: 0;
+  	table-layout: fixed;
+  	width: 80%;
+}
+
+table th, table td {
+	padding: 10px 20px;
+	border: 1px solid #CCCCCC;
+}
+
+table .button {
+	margin: 0;
+}
+
+table th {
+	background-color: #333333;
+	color: white;
+}
+
+.button {
+	margin-top: 20px;
+	padding: 10px 30px;
+	font-weight:bold;
+	background-color: black;
+	border: none;
+	border-radius: 0 7px 0 7px;
+	color: white;
+}
+
+#CartConfirmAction {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#payInfo p span {
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 10px;
+	font-size: 20px;
+}
+
+#payInfo p {
+	border-bottom: 1px solid black;
+	width: 15%;
+	text-align: left;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+#payment p {
+	border-bottom: 1px solid black;
+	width: 15%;
+	text-align: left;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+#payment p span {
+	font-weight: bold;
+	padding-left: 3px;
+	padding-right: 10px;
+	font-size: 17px;
+}
+
+.link {
+	margin-top: 50px;
+}
+
+.link a{
+	padding-top: 50px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	color: #AAAAAA;
+}
+
+.link a:hover {
+	border-bottom: solid 2px #FF6666;
+	color: #FF6666;
+	transition: .5s ease 0s;
+}
+
+#link {
+	margin-bottom: 30px;
+}
+
+#footer {
+	height: 80px;
+	width: 100%;
+	background-color: #CCFFFF;
+}

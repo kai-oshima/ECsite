@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+/* 共通 */
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: Arial;
+	height: 760px;
+}
+
+#main {
+	height: 680px;
+/* 	background-color: #F0F8FF; */
+	text-align: center;
+	margin-top: 20px;
+}
+
+h3 {
+	margin-top: 0px;
+	color: #333333;
+}
+
+form {
+	background-color: white;
+	padding: 30px 0;
+	border: 1px solid #CCCCCC;
+	border-radius: 20px;
+	width: 30%;
+	margin: 0 auto;
+}
+
+table {
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+table th, table td {
+	padding-bottom: 10px;
+}
+
+table input {
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+}
+
+.button {
+	margin-top: 20px;
+	padding: 10px 30px;
+	font-weight:bold;
+	background-color: black;
+	border: none;
+	border-radius: 0 7px 0 7px;
+	color: white;
+}
+
+#error {
+	margin-bottom: 10px;
+}
+
+#footer {
+	height: 80px;
+	width: 100%;
+	background-color: #CCFFFF;
+}

@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+
+/* 共通 */
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: Arial;
+	height: 760px;
+}
+
+#main {
+	height: 680px;
+/* 	background-color: #F0F8FF; */
+	text-align: center;
+
+}
+
+#contents {
+	max-width: 40%;
+	height: 400px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+h3 {
+	margin-top: 0px;
+	color: #333333;
+}
+
+form {
+	background-color: white;
+	padding: 30px 0;
+	border: 1px solid #CCCCCC;
+	border-radius: 20px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+table {
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+table th, table td {
+	padding-bottom: 10px;
+}
+
+table input {
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+}
+
+.button {
+	margin-top: 20px;
+	padding: 10px 30px;
+	font-weight:bold;
+	background-color: black;
+	border: none;
+	border-radius: 0 7px 0 7px;
+	color: white;
+
+}
+
+.forgetPass {
+	margin-bottom: 20px;
+}
+
+.forgetPass a{
+	padding-top: 50px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	color: #AAAAAA;
+}
+
+.forgetPass a:hover {
+	border-bottom: solid 2px #FF6666;
+	color: #FF6666;
+	transition: .5s ease 0s;
+}
+
+.link {
+	margin-top: 50px;
+}
+
+.link p a, .link a{
+	padding-top: 50px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	color: #AAAAAA;
+}
+
+.link p a:hover, .link a:hover {
+	border-bottom: solid 2px #FF6666;
+	color: #FF6666;
+	transition: .5s ease 0s;
+}
+
+#error {
+	padding-top: 20px;
+}
+
+#footer {
+	height: 80px;
+	width: 100%;
+	background-color: #CCFFFF;
+}
