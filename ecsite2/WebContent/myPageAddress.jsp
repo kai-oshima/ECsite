@@ -53,7 +53,9 @@
 
 		<div class="link">
 			<div id="link">
+			<s:if test="message == ''">
 				<a href='<s:url action="RegistAddressAction"/>'>新規ユーザー登録</a>
+			</s:if>
 			</div>
 			<div>
 				<a href= '<s:url action = "GoHomeAction"/>'>HOME</a>

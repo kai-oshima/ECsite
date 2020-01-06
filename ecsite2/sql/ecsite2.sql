@@ -45,6 +45,7 @@ last_name varchar(16),
 mail varchar(32),
 phone_num varchar(16),
 user_address varchar(30),
+image varchar(100),
 deleted tinyint default 0,
 insert_date datetime,
 delete_date datetime
@@ -57,6 +58,7 @@ item_name varchar(30),
 item_price int,
 item_count int,
 total_price int,
+image varchar(100),
 size varchar(1),
 insert_date datetime,
 update_date datetime
@@ -81,3 +83,4 @@ INSERT INTO item_info(item_name,item_price,item_stock,image,release_date,release
 INSERT INTO item_info(item_name,item_price,item_stock,image,release_date,release_company)VALUES("hondana",1700,50,"./image/t6.jpg","12/12/2019","KAI OSHIMA");
 
 INSERT INTO login_user(login_id,login_pass,user_name,status)VALUES("kai","kai","kai",1);
+INSERT into login_user(login_id,login_pass,user_name,status)VALUES("guest","guest","guest",1);

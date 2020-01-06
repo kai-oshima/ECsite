@@ -23,6 +23,7 @@ public class CartAddAction extends ActionSupport implements SessionAware {
 	private String size;
 	private int totalPrice;
 	private String message;
+	private String image;
 
 	private List<CartInfoDTO> cartInfoDTOList;
 	private Map<String, Object> session;
@@ -65,7 +66,7 @@ public class CartAddAction extends ActionSupport implements SessionAware {
 			//登録されていない場合、商品の新規登録を行う
 
 			try {
-				resultCount = cartInfoDAO.registItem(userId, itemName, price, totalPrice, count, size);
+				resultCount = cartInfoDAO.registItem(userId, itemName, price, totalPrice, count, size,image);
 			}catch(SQLException e) {
 				result = "DBError";
 				return result;
@@ -88,8 +89,9 @@ public class CartAddAction extends ActionSupport implements SessionAware {
 			//すでに合計金額がセッションに入っている場合は更新する
 			if(session.containsKey("totalPriceSum")) {
 				session.remove("totalPriceSum");
-				session.put("totalPriceSum", totalPriceSum);
 			}
+
+			session.put("totalPriceSum", totalPriceSum);
 
 			result = SUCCESS;
 			return result;
@@ -136,6 +138,14 @@ public class CartAddAction extends ActionSupport implements SessionAware {
 
 	public void setCount(int count) {
 		this.count = count;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public List<CartInfoDTO> getCartInfoDTOList() {

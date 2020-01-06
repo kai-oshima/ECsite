@@ -70,6 +70,7 @@
 				var mail2 = $('input[name="mail"]').val(mail);
 				var phoneNumber2 = $('input[name="phoneNumber"]').val(phoneNumber);
 				var address2 = $('input[name="address"]').val(address);
+
 			} else if ($(this).prop('checked',false)){
 				$('.checkBox').prop('checked', false);
 				$('input[type="submit"]').prop('disabled', true);

@@ -45,24 +45,26 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 			CartInfoDTO dto = new CartInfoDTO();
 			dto = cartInfoDTOList.get(i);
 
-			int itemTransactionId = dto.getId();
-			int totalCount = dto.getCount();
-			String userMasterId = session.get("login_user_id").toString();
-			String payment = session.get("payment").toString();
+			UserInfoDAO dao = new UserInfoDAO();
+			int userMasterId = Integer.parseInt(session.get("userMasterId").toString());
+			String userId = session.get("login_user_id").toString();
 			String itemName = dto.getItemName();
-			String size = dto.getSize();
+			int totalCount = dto.getCount();
 			int totalPrice = dto.getTotalPrice();
 			int itemPrice = dto.getItemPrice();
-
-			UserInfoDAO dao = new UserInfoDAO();
-
+			String size = dto.getSize();
+			String payment = session.get("payment").toString();
+			String image = dto.getImage();
+			int itemTransactionId = 0;
 			try {
-				resultCount = dao.registUserInfo(itemTransactionId,totalCount,userMasterId,payment,itemName,size,totalPrice,firstName,lastName,mail,phoneNumber,address,itemPrice);
-
-			}catch(SQLException e) {
+				itemTransactionId = dao.getItemTransaction(itemName, image);
+			}catch(SQLException e){
 				result = "DBError";
 				return result;
 			}
+
+			resultCount = dao.insertUserInfo(userMasterId,userId,itemName,totalCount,totalPrice,itemPrice,size,payment,firstName,lastName,mail,phoneNumber,address,image,itemTransactionId);
+
 		}
 			try {
 				resultCount2 = cartInfoDAO.deleteAllCartInfo(session.get("login_user_id").toString());

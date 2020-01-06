@@ -19,13 +19,15 @@
 		<s:if test="message != ''">
 			<p><s:property value="message"/></p>
 		</s:if>
-
-		<form action="DeleteItemAction">
+		<s:else>
+			<form action="DeleteItemAction">
 			<table>
 				<tr>
 					<th>商品名</th>
-					<th>個数</th>
+					<th>商品写真</th>
 					<th>商品価格</th>
+					<th>サイズ</th>
+					<th>個数</th>
 					<th>支払方法</th>
 					<th>宛先氏名</th>
 					<th>宛先住所</th>
@@ -35,8 +37,10 @@
 				<s:iterator value="myPageDTOList">
 					<tr>
 						<td><s:property value="itemName"/></td>
-						<td><s:property value="count"/></td>
+						<td><img src='<s:property value="image"/>' width="40" height="40"/></td>
 						<td><s:property value="itemPrice"/></td>
+						<td><s:property value="size"/></td>
+						<td><s:property value="count"/></td>
 						<td><s:property value="pay"/></td>
 						<td><s:property value="lastName"/><s:property value="firstName"/></td>
 						<td><s:property value="address"/></td>
@@ -52,14 +56,17 @@
 					<td></td>
 					<td></td>
 					<td></td>
+					<td></td>
+					<td></td>
 					<td><s:property value="#session.totalPriceSum"/></td>
 				</tr>
 			</table>
-			<input type="submit" value="削除" class="button"/>
+			<input type="submit" value="履歴削除" class="button"/>
 		</form>
 		<form action="MyPageAddressAction">
 			<input type="submit" value="ユーザーアドレス一覧" class="button"/>
 		</form>
+		</s:else>
 		<div class="link"><a href= '<s:url action = "GoHomeAction"/>'>HOME</a></div>
 	</div>
 

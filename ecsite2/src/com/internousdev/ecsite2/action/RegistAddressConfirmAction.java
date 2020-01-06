@@ -30,6 +30,15 @@ public class RegistAddressConfirmAction extends ActionSupport implements Session
 
 		String result = SUCCESS;
 
+		if(session.containsKey("regist_address_flg")) {
+			session.remove("first_name");
+			session.remove("last_name");
+			session.remove("mail");
+			session.remove("phone");
+			session.remove("address");
+			session.remove("regist_address_flg");
+		}
+
 		session.put("first_name",firstName);
 		session.put("last_name",lastName);
 		session.put("mail",mail);

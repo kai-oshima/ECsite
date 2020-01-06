@@ -178,10 +178,5 @@
 		<result name="DBError">systemError.html</result>
 	</action>
 
-<!-- 	<action name="ItemListActionTest" class="com.internousdev.ecsite2.action.ItemListActionTest" -->
-<!-- 	method="execute"> -->
-<!-- 		<result name="success">itemList.jsp</result> -->
-<!-- 	</action> -->
-
 </package>
 </struts>

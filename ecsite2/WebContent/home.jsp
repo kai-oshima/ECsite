@@ -18,7 +18,7 @@
 		<jsp:include page="header.jsp" />
 	</div>
 	<div id="main">
-		<img src="./image/tshirt2.jpg" id="img2"/>
+		<img id="img" src="./image/tshirt2.jpg" id="img2"/>
 	</div>
 	<div id="footer">
 	</div>

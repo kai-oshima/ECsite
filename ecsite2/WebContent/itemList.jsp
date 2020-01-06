@@ -32,35 +32,38 @@
 
 			<s:form action="CartAddAction" id="CartAddAction">
 					<input type="button" id="close"  onclick="close_button(this)" value="×"/>
-					<div>
+					<div class="img">
 						<img id="img" src="" width="400" height="400"/>
 					</div>
 
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li>サイズ:
-							<select name= "size">
-								<option value="S" selected="selected">S</option>
-								<option value="M">M</option>
-								<option value="L">L</option>
-							</select>
-						</li>
-						<li>個数：
-							<select name= "count">
-								<option value="1" selected="selected">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-						</li>
-						<li><input type="hidden" name="itemName" value=""/></li>
-						<li><input type="hidden" name="price" value=""/></li>
-						<li><input type="submit" class="button" value="カートに追加"/></li>
-					</ul>
+					<div class="itemList">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li>サイズ:
+								<select name= "size">
+									<option value="S" selected="selected">S</option>
+									<option value="M">M</option>
+									<option value="L">L</option>
+								</select>
+							</li>
+							<li>個数：
+								<select name= "count">
+									<option value="1" selected="selected">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</li>
+							<li><input type="hidden" name="itemName" value=""/></li>
+							<li><input type="hidden" name="price" value=""/></li>
+							<li><input type="hidden" name="image" value=""/></li>
+							<li><input type="submit" class="button" value="カートに追加"/></li>
+						</ul>
+					</div>
 			</s:form>
 
 		<div class="link">
@@ -88,8 +91,9 @@
 			var Detail3 = $("#CartAddAction li:nth-child(3)").text("販売開始日:" + date);
 			var Detail4 = $("#CartAddAction li:nth-child(4)").text("デザイン：" + company);
 
-			var hiddenItemName =$('input[name="itemName"]').val(itemName);
-			var hiddenPrice =$('input[name="price"]').val(price);
+			var hiddenItemName = $('input[name="itemName"]').val(itemName);
+			var hiddenPrice = $('input[name="price"]').val(price);
+			var hiddenImage = $('input[name="image"]').val(imageName);
 
 			$("#CartAddAction").fadeIn();
 			$('#background').fadeIn();

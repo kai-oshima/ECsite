@@ -46,6 +46,7 @@ public class LoginConfirmAction extends ActionSupport implements SessionAware {
 		}
 		session.put("loginUser", loginDTO);
 		session.put("login_user_id", loginUserId);
+		session.put("userMasterId", loginDTO.getId());
 		session.remove("save_user_id");
 
 		if (((LoginDTO)session.get("loginUser")).getLoginFlg()) {
@@ -100,7 +101,7 @@ public class LoginConfirmAction extends ActionSupport implements SessionAware {
 						} else {
 							//カートに商品を追加
 							try {
-								resultCount = cartInfoDAO.registItem(loginUserId, dto.getItemName(), dto.getItemPrice(), dto.getTotalPrice(), dto.getCount(), dto.getSize());
+								resultCount = cartInfoDAO.registItem(loginUserId, dto.getItemName(), dto.getItemPrice(), dto.getTotalPrice(), dto.getCount(), dto.getSize(), dto.getImage());
 							}catch(SQLException e) {
 								result = "DBError";
 								return result;

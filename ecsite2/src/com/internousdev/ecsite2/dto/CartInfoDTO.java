@@ -11,6 +11,7 @@ public class CartInfoDTO {
 	private int totalPrice;
 	private String size;
 	private int sum;
+	private String image;
 
 	public int getId() {
 		return id;
@@ -82,6 +83,14 @@ public class CartInfoDTO {
 
 	public void setSum(int sum) {
 		this.sum = sum;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

@@ -12,7 +12,7 @@ import com.internousdev.ecsite2.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GoMyPageAction extends ActionSupport implements SessionAware{
-	private String message;
+	private String message ="";
 	private Map<String, Object> session;
 	private MyPageDAO myPageDAO = new MyPageDAO();
 	private List<MyPageDTO> myPageDTOList = new ArrayList<MyPageDTO>();

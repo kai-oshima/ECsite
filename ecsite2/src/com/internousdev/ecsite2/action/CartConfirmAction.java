@@ -14,13 +14,13 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CartConfirmAction extends ActionSupport implements SessionAware {
 
 	private String userId;
-	private String itemName;
+//	private String itemName;
 	private String totalPriceSum;
 	private String pay;
 	private Map<String, Object> session;
 	int resultCount = 0;
 
-	private List<CartInfoDTO> cartInfoDTO = new ArrayList<CartInfoDTO>();
+	private List<CartInfoDTO> cartInfoDTOList = new ArrayList<CartInfoDTO>();
 
 	public String execute() throws SQLException {
 		String result = SUCCESS;
@@ -35,7 +35,7 @@ public class CartConfirmAction extends ActionSupport implements SessionAware {
 		//カート情報取得
 		try {
 			CartInfoDAO cartInfoDAO = new CartInfoDAO();
-			cartInfoDTO = cartInfoDAO.getCartInfo(userId);
+			cartInfoDTOList = cartInfoDAO.getCartInfo(userId);
 		}catch(SQLException e) {
 			result = "DBError";
 			return result;
@@ -60,13 +60,13 @@ public class CartConfirmAction extends ActionSupport implements SessionAware {
 		return result;
 	}
 
-	public String getItemName() {
-		return itemName;
-	}
-
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
+//	public String getItemName() {
+//		return itemName;
+//	}
+//
+//	public void setItemName(String itemName) {
+//		this.itemName = itemName;
+//	}
 
 	public String getTotalPriceSum() {
 		return totalPriceSum;
@@ -84,12 +84,12 @@ public class CartConfirmAction extends ActionSupport implements SessionAware {
 		this.pay = pay;
 	}
 
-	public List<CartInfoDTO> getCartInfoDTO() {
-		return cartInfoDTO;
+	public List<CartInfoDTO> getCartInfoDTOList() {
+		return cartInfoDTOList;
 	}
 
-	public void setCartInfoDTO(List<CartInfoDTO> cartInfoDTO) {
-		this.cartInfoDTO = cartInfoDTO;
+	public void setCartInfoDTOList(List<CartInfoDTO> cartInfoDTOList) {
+		this.cartInfoDTOList = cartInfoDTOList;
 	}
 
 	public Map<String, Object> getSession() {

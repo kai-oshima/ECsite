@@ -37,7 +37,8 @@
 					<thead>
 						<tr>
 							<th>商品名</th>
-							<th>値段</th>
+							<th>商品写真</th>
+							<th>商品価格</th>
 							<th>サイズ</th>
 							<th>個数</th>
 							<th>合計金額</th>
@@ -49,6 +50,7 @@
 						<s:iterator value="cartInfoDTOList">
 							<tr>
 								<td><s:property value="itemName"/></td>
+								<td><img src='<s:property value="image"/>' width="50" height="50"/></td>
 								<td><s:property value="itemPrice"/></td>
 								<td><s:property value="size"/></td>
 								<td><s:property value="count"/></td>
@@ -97,9 +99,9 @@
 			var targetRow = $(submit).parent().parent();
 
 			var colum = $(targetRow).find('td');
-			var minus_price = $(targetRow).find('td:nth-child(5)').text();
+			var minus_price = $(targetRow).find('td:nth-child(6)').text();
 			var minus_itemName = $(targetRow).find('td:nth-child(1)').text();
-			var minus_size = $(targetRow).find('td:nth-child(3)').text();
+			var minus_size = $(targetRow).find('td:nth-child(4)').text();
 			var delete_Row = targetRow.index() + 1;
 
 			var pay_info = $("#payInfo").find('span');

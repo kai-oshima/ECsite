@@ -29,12 +29,12 @@ public class ChangeAddressAction extends ActionSupport implements SessionAware {
 			phoneNumber = session.get("new_phone").toString();
 			address = session.get("new_address").toString();
 		} else {
-			session.put("first_name", firstName);
-			session.put("last_name", lastName);
-			session.put("mail", mail);
-			session.put("phoneNumber", phoneNumber);
-			session.put("address", address);
-			session.put("change_address_flg", 1);
+			session.put("new_first_name", firstName);
+			session.put("new_last_name", lastName);
+			session.put("new_mail", mail);
+			session.put("new_phoneNumber", phoneNumber);
+			session.put("new_address", address);
+			session.put("new_change_address_flg", 1);
 		}
 
 		return result;

@@ -30,6 +30,7 @@ public class LoginDAO {
 				loginDTO.setLoginId(rs.getString("login_id"));
 				loginDTO.setLoginPassword(rs.getString("login_pass"));
 				loginDTO.setUserName(rs.getString("user_name"));
+				loginDTO.setId(rs.getInt("id"));
 
 				if(rs.getString("login_id" )!=null) {
 					loginDTO.setLoginFlg(true);

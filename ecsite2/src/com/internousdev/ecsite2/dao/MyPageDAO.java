@@ -18,7 +18,7 @@ public class MyPageDAO {
 		Connection con = db.getConnection();
 		List<MyPageDTO> myPageDTOList = new ArrayList<MyPageDTO>();
 
-		String sql = "SELECT * FROM user_info WHERE user_master_id = ?";
+		String sql = "SELECT * FROM user_info WHERE user_id = ? AND deleted = 0 ";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -32,6 +32,7 @@ public class MyPageDAO {
 				dto.setItemName(rs.getString("item_name"));
 				dto.setCount(rs.getInt("total_count"));
 				dto.setSize(rs.getString("size"));
+				dto.setImage(rs.getString("image"));
 				dto.setPay(rs.getString("payment"));
 				dto.setTotalPrice(rs.getInt("total_price"));
 				dto.setUserMasterId(rs.getString("user_master_id"));
@@ -58,7 +59,7 @@ public class MyPageDAO {
 			DBConnector db = new DBConnector();
 			Connection con = db.getConnection();
 
-			String sql = "SELECT total_price FROM user_info WHERE user_master_id=?";
+			String sql = "SELECT total_price FROM user_info WHERE user_id=?";
 
 			try {
 				PreparedStatement ps = con.prepareStatement(sql);
@@ -76,14 +77,14 @@ public class MyPageDAO {
 			return totalPriceSum;
 		}
 
-	//履歴削除
-		public int deleteItem(String userMasterId) throws SQLException {
+	//履歴の論理削除
+		public int updateItem(String userMasterId) throws SQLException {
 
 			DBConnector db = new DBConnector();
 			Connection con = db.getConnection();
 			int result = 0;
 
-			String sql = "DELETE FROM user_info WHERE user_master_id=?";
+			String sql = "UPDATE user_info SET deleted = 1 WHERE user_id=?";
 
 			try {
 				PreparedStatement ps = con.prepareStatement(sql);
@@ -95,5 +96,4 @@ public class MyPageDAO {
 			}
 			return result;
 		}
-
 }

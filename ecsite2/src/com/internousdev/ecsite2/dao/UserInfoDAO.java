@@ -13,40 +13,67 @@ import com.internousdev.ecsite2.util.DateUtil;
 
 public class UserInfoDAO {
 
-	public int registUserInfo(int itemTransactionId,int totalCount,String userMasterId,String payment,String itemName,String size, int totalPrice, String firstName, String lastName, String mail, String phoneNumber, String address, int itemPrice) throws SQLException{
-
+	public int insertUserInfo(int userMasterId, String userId, String itemName, int totalCount, int totalPrice, int itemPrice, String size, String payment, String firstName, String lastName, String mail, String phone, String address, String image, int itemTransactionId) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 		DateUtil dateUtil = new DateUtil();
 		int resultCount = 0;
 
-		String sql = "INSERT INTO user_info(item_transaction_id,user_master_id,item_name,total_count,size,payment,insert_date,total_price,first_name,last_name,mail,phone_num,user_address,item_price)"
-				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO user_info(user_master_id,user_id,item_name,total_count,item_price,size,payment,total_price,first_name,last_name,mail,phone_num,user_address,image,insert_date,item_transaction_id)"
+					+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, itemTransactionId);
-			ps.setString(2, userMasterId);
+			ps.setInt(1, userMasterId);
+			ps.setString(2, userId);
 			ps.setString(3, itemName);
 			ps.setInt(4, totalCount);
-			ps.setString(5, size);
-			ps.setString(6, payment);
-			ps.setString(7, dateUtil.getDate());
-			ps.setInt(8,  totalPrice);
+			ps.setInt(5, itemPrice);
+			ps.setString(6, size);
+			ps.setString(7, payment);
+			ps.setInt(8, totalPrice);
 			ps.setString(9, firstName);
 			ps.setString(10, lastName);
 			ps.setString(11, mail);
-			ps.setString(12, phoneNumber);
+			ps.setString(12, phone);
 			ps.setString(13, address);
-			ps.setInt(14, itemPrice);
-
+			ps.setString(14, image);
+			ps.setString(15, dateUtil.getDate());
+			ps.setInt(16, itemTransactionId);
 			resultCount = ps.executeUpdate();
-
+		}catch(SQLException e) {
+			e.printStackTrace();
 		}finally {
+			try {
 				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return resultCount;
+	}
+
+	public int getItemTransaction(String itemName, String image) throws SQLException {
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+		int itemTransactionId = 0;
+
+		String sql = "SELECT id FROM item_info WHERE item_name = ? and image = ?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, itemName);
+			ps.setString(2, image);
+			ResultSet rs = ps.executeQuery();
+
+			if(rs.next()) {
+				itemTransactionId = rs.getInt("id");
+			}
+		}finally {
+			con.close();
 		}
 
-		return resultCount;
+		return itemTransactionId;
 	}
 
 	public List<UserInfoDTO> getUserInfo(String userId) throws SQLException{

@@ -14,6 +14,7 @@ public class MyPageDTO {
 	private String firstName;
 	private String lastName;
 	private String address;
+	private String image;
 
 	public int getItemPrice() {
 		return itemPrice;
@@ -109,6 +110,14 @@ public class MyPageDTO {
 
 	public void setUserMasterId(String userMasterId) {
 		this.userMasterId = userMasterId;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

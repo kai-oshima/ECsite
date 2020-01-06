@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class DeleteItemAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
+	private String message ="";
 
 	public String execute() {
 		String result = ERROR;
@@ -23,18 +24,27 @@ public class DeleteItemAction extends ActionSupport implements SessionAware {
 		}
 
 		try {
-			resultCount = myPageDAO.deleteItem(session.get("login_user_id").toString());
+			resultCount = myPageDAO.updateItem(session.get("login_user_id").toString());
 		} catch (SQLException e) {
 			return "DBError";
 		}
 
 		if (resultCount != 0) {
 
+			setMessage("購入履歴はありません。");
 			result = SUCCESS;
 			return result;
 		}
 
 		return result;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Map<String, Object> getSession() {

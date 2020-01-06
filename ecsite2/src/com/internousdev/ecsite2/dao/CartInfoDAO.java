@@ -37,6 +37,7 @@ public class CartInfoDAO {
 				dto.setCount(rs.getInt("item_count"));
 				dto.setSize(rs.getString("size"));
 				dto.setTotalPrice(rs.getInt("total_price"));
+				dto.setImage(rs.getString("image"));
 
 				cartInfoDTOList.add(dto);
 			}
@@ -47,15 +48,15 @@ public class CartInfoDAO {
 	}
 
 	//カートに商品を追加
-	public int registItem(String userId,String itemName,int price,int totalPrice, int count, String size) throws SQLException {
+	public int registItem(String userId,String itemName,int price,int totalPrice, int count, String size, String image) throws SQLException {
 
 		int psCount = 0;
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 		DateUtil dateUtil = new DateUtil();
 
-		String sql = "INSERT INTO cart_info(user_id,item_name,item_price,item_count,total_price,size,insert_date)"
-					+ "VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO cart_info(user_id,item_name,item_price,item_count,total_price,size,insert_date,image)"
+					+ "VALUES(?,?,?,?,?,?,?,?)";
 
 		try {
 
@@ -67,6 +68,7 @@ public class CartInfoDAO {
 			ps.setInt(5, totalPrice);
 			ps.setString(6, size);
 			ps.setString(7, dateUtil.getDate());
+			ps.setString(8, image);
 
 			psCount = ps.executeUpdate();
 		}catch (SQLException e) {

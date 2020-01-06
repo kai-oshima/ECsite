@@ -24,20 +24,24 @@
 					<thead>
 						<tr>
 							<th>商品名</th>
-							<th>値段</th>
+							<th>商品写真</th>
+							<th>商品価格</th>
+							<th>サイズ</th>
 							<th>個数</th>
 							<th>合計金額</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<s:iterator value="cartInfoDTO">
-						<tr>
-							<td><s:property value="itemName"/></td>
-							<td><s:property value="itemPrice"/></td>
-							<td><s:property value="count"/></td>
-							<td><s:property value="totalPrice"/></td>
-						</tr>
+						<s:iterator value="cartInfoDTOList">
+							<tr>
+								<td><s:property value="itemName"/></td>
+								<td><img src='<s:property value="image"/>' width="50" height="50"/></td>
+								<td><s:property value="itemPrice"/></td>
+								<td><s:property value="size"/></td>
+								<td><s:property value="count"/></td>
+								<td><s:property value="totalPrice"/></td>
+							</tr>
 						</s:iterator>
 					</tbody>
 				</table>

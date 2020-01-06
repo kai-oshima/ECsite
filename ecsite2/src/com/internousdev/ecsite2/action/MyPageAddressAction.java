@@ -15,7 +15,7 @@ public class MyPageAddressAction extends ActionSupport implements SessionAware {
 
 	private List<UserAddressDTO> userAddressDTOList = new ArrayList<UserAddressDTO>();
 	private Map<String, Object> session;
-	private String message;
+	private String message = "";
 
 	public String execute() {
 		String result = SUCCESS;
